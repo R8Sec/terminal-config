@@ -1,0 +1,43 @@
+- name: Configure terminal
+  hosts: vps
+  tasks:
+    - name: Install packages
+      become: True
+      package:
+        update_cache: yes
+        name:
+          - zsh
+          - tmux
+          - xclip
+        state: present
+    
+    - name: Install NeoVim
+      script: install_nvim.sh
+
+    - name: Check if Tmux Plugin Manager repo exists
+      stat:
+        path: "{{ ansible_user_dir }}/.tmux/plugins/tpm"
+      register: tpm_installed
+
+    - name: Clone Tmux Plugin Manager repo
+      command: git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+      when: tpm_installed.stat.exists == False
+    
+    - name: Copy .zshrc
+      copy:
+        src: ".zshrc"
+        dest: "{{ ansible_user_dir }}/.zshrc"
+        force: yes
+    
+    - name: Copy .tmux.conf
+      copy:
+        src: ".tmux.conf"
+        dest: "{{ ansible_user_dir }}/.tmux.conf"
+        force: yes
+
+    - name: Change default shell to zsh
+      become: True
+      user:
+        name: "{{ ansible_user }}"
+        shell: /bin/zsh
+      when: ansible_user != 'root'

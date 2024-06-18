@@ -30,10 +30,16 @@ fi
 
 # Backup config file and delete local neovim cache
 if [ -e ~/.config/nvim ]; then
+    if [ -e ~/.config/nvim.bak ]; then
+        rm -rf ~/.config/nvim.bak
+    fi
     mv ~/.config/nvim ~/.config/nvim.bak
 fi
 if [ -e ~/.local/share/nvim ]; then
     rm -rf ~/.local/share/nvim
+fi
+if [ -e ~/.cache/nvim ]; then
+    rm -rf ~/.cache/nvim
 fi
 
 # Install Neovim

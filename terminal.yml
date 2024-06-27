@@ -1,5 +1,6 @@
 - name: Configure terminal
-  hosts: vps
+  hosts: localhost
+  connection: local
   tasks:
     - name: Install packages
       become: True

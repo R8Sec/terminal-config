@@ -22,10 +22,6 @@ if command -v nvim &> /dev/null; then
     elif [ -e ~./local/share/nvim-linux64 ]; then
         rm -rf ~/.local/share/nvim-linux64
         rm -rf ~/.local/bin/nvim
-    else
-        echo "Neovim is already installed"
-
-    fi
 fi
 
 # Backup config file and delete local neovim cache

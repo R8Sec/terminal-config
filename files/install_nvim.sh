@@ -47,5 +47,5 @@ curl -sL https://github.com/neovim/neovim-releases/releases/download/v0.10.0/nvi
 tar xvzf /tmp/nvim-linux64.tar.gz -C ~/.local/share/
 ln -sf ~/.local/share/nvim-linux64/bin/nvim ~/.local/bin/nvim
 
-# Install NvChad
-git clone https://github.com/NvChad/starter ~/.config/nvim
+# Install custom NvChad
+git clone https://github.com/R8Sec/custom-nvchad.git ~/.config/nvim --depth 1

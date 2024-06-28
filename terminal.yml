@@ -15,6 +15,9 @@
           - tmux
           - xclip
         state: present
+
+    - name: Setup
+      script: setup.sh 
     
     - name: Install NeoVim
       script: install_nvim.sh

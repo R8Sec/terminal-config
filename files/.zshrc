@@ -66,6 +66,9 @@ alias egrep='egrep --color=auto'
 alias diff='diff --color=auto'
 alias c='clear'
 
+# PATH
+export PATH=$HOME/.local/bin:$PATH
+
 # Shell integrations
 source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"

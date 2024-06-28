@@ -12,4 +12,4 @@ fnm use --install-if-missing 20
 /home/linuxbrew/.linuxbrew/bin/brew install fzf
 
 # zoxide
-curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+/home/linuxbrew/.linuxbrew/bin/brew install zoxide

@@ -2,6 +2,10 @@
   hosts: localhost
   connection: local
   tasks:
+    - name: Set custom fact for ansible_user
+      set_fact:
+        ansible_user: "{{ lookup('env', 'USER') }}"
+
     - name: Install packages
       become: True
       package:

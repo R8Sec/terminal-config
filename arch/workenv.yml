@@ -1,0 +1,6 @@
+---
+- name: "Work Environment"
+  hosts: localhost
+  connection: local
+  roles:
+    - roles/terminal

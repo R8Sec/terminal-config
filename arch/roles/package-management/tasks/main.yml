@@ -7,8 +7,5 @@
       - git
       - base-devel
 
-- name: Paru
-  script: paru.sh
-
-- name: BlackArch
-  script: blackarch.sh
+- name: Setting up package management
+  script: pkg-mng.sh

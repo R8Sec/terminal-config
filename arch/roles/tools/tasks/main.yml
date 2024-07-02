@@ -8,6 +8,6 @@
 
 - name: Install Python libraries
   become: True
-  pip:
+  community.general.pipx:
     name: "{{ item }}"
   with_items: "{{ python_packages }}"

@@ -1,5 +1,6 @@
 ---
 packages_to_install:
+  - python-pipx
   - jq
   - flameshot
   - pandoc

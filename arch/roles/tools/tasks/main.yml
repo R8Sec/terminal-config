@@ -2,7 +2,6 @@
 - name: Tools
   become: True
   community.general.pacman:
-    upadate_cache: yes
     name: "{{ items }}"
     state: present
   with_items: "{{ packages_to_install }}"
@@ -12,24 +11,3 @@
   pip:
     name: "{{ item }}"
   with_items: "{{ python_packages }}"
-
-- name: enable snapd service
-  become: True
-  service:
-    name: snapd
-    enabled: True
-    state: started
-
-- name: enable snapd.apparmor service
-  become: True
-  service:
-    name: snapd.apparmor
-    enabled: True
-    state: started
-
-- name: Install Obsidian
-  become: True
-  snap:
-    name: obsidian
-    classic: True
-    channel: latest/stable

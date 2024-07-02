@@ -13,4 +13,4 @@
 
 - name: BlackArch
   become: True
-  script: blackarch.sh
+  script: blackarch.s

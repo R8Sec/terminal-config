@@ -11,5 +11,4 @@
   script: paru.sh
 
 - name: BlackArch
-  become: True
   script: blackarch.sh

@@ -1,0 +1,19 @@
+---
+packages_to_install:
+  - snapd
+  - jq
+  - flameshot
+  - pandoc
+  - feh
+  - xclip
+  - neo4j
+  - bloodhound
+  - bloodhound.py
+  - seclists
+  - eyewitness
+  - cupp
+  - smtp-user-enum
+  - xxd
+
+python_packages:
+  - pwntools

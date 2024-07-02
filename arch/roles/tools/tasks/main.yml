@@ -2,7 +2,7 @@
 - name: Tools
   become: True
   community.general.pacman:
-    name: "{{ items }}"
+    name: "{{ item }}"
     state: present
   with_items: "{{ packages_to_install }}"
 

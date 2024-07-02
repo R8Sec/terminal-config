@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-DIR=$HOME/git
+DIR=$HOME/git/paru
 
+mkdir -p $DIR
 git clone https://aur.archlinux.org/paru.git $DIR
-cd $DIR/paru && makepkg -si --noconfirm
+cd $DIR && makepkg -si --noconfirm

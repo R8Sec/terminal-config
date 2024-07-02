@@ -8,9 +8,8 @@
       - base-devel
 
 - name: Paru
-  become: True
   script: paru.sh
 
 - name: BlackArch
   become: True
-  script: blackarch.s
+  script: blackarch.sh

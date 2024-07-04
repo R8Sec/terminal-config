@@ -13,6 +13,18 @@ packages_to_install:
   - cupp
   - smtp-user-enum
   - xxd
+  - openldap
+  - ghidra
+  - nmap
+  - wireshark-qt
+  - wireshark-cli
+  - tcpdump
+  - burpsuite
+  - metasploit
+  - sqlmap
+  - john
+  - impacket
+  - crackmapexec
 
 python_packages:
   - pwntools

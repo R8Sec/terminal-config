@@ -10,6 +10,7 @@
     name:
       - zsh
       - tmux
+      - kitty
       - xclip
     state: present
 

@@ -1,5 +1,7 @@
 ---
 packages_to_install:
+  - openvpn
+  - wireguard-tools
   - python-pipx
   - jq
   - flameshot

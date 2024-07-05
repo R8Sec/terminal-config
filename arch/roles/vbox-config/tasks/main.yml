@@ -8,6 +8,7 @@
     state: present
 
 - name: Enable Guest additions
+  become: true
   systemd_service:
     name: vboxservice.service
     enabled: true
@@ -24,6 +25,11 @@
     dest: "{{ ansible_user_dir }}/.xinitrc"
     force: yes
     
+- name: create i3 config directory
+  file:
+    path: "{{ ansible_user_dir }}/.conifg/i3"
+    state: directory
+
 - name: copy i3 config
   copy:
     src: "i3-config"

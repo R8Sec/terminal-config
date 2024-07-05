@@ -4,7 +4,7 @@
     ansible_user: "{{ lookup('env', 'USER') }}"
 
 - name: Install packages
-  become: True
+  become: true
   community.general.pacman:
     update_cache: yes
     name:

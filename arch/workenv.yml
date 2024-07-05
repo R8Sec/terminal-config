@@ -4,5 +4,6 @@
   connection: local
   roles:
     - roles/package-management
+    - roles/vbox-config
     - roles/terminal
     - roles/tools

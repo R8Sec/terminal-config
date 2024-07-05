@@ -1,0 +1,31 @@
+---
+- name: Install VirtualBox guest additions
+  become: true
+  community.general.pacman:
+    name: 
+      - linux-headers
+      - virtualbox-guest-utils
+    state: present
+
+- name: Enable Guest additions
+  systemd_service:
+    name: vboxservice.service
+    enabled: true
+
+- name: copy .Xresources
+  copy:
+    src: ".Xresources"
+    dest: "{{ ansible_user_dir }}/.Xresources"
+    force: yes
+    
+- name: copy .xinitrc
+  copy:
+    src: ".xinitrc"
+    dest: "{{ ansible_user_dir }}/.xinitrc"
+    force: yes
+    
+- name: copy i3 config
+  copy:
+    src: "i3-config"
+    dest: "{{ ansible_user_dir }}/.config/i3/config"
+    force: yes

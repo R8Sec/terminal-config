@@ -66,6 +66,10 @@ alias egrep='egrep --color=auto'
 alias diff='diff --color=auto'
 alias c='clear'
 
+# Kitty Aliases
+alias icat="kitten icat"
+alias d="kitten diff"
+
 # PATH
 export PATH=$HOME/.local/bin:$PATH
 

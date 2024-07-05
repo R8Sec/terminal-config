@@ -12,13 +12,11 @@
       - tmux
       - kitty
       - xclip
+      - otf-comicshanns-nerd
     state: present
 
 - name: Setup
   script: setup.sh 
-
-- name: Install NeoVim
-  script: install_nvim.sh
 
 - name: Check if Tmux Plugin Manager repo exists
   stat:
@@ -39,6 +37,12 @@
   copy:
     src: ".tmux.conf"
     dest: "{{ ansible_user_dir }}/.tmux.conf"
+    force: yes
+
+- name: Copy kitty.conf
+  copy:
+    src: "kitty.conf"
+    dest: "{{ ansible_user_dir }}/.config/kitty/kitty.conf"
     force: yes
 
 - name: Change default shell to zsh

@@ -7,7 +7,6 @@ packages_to_install:
   - flameshot
   - pandoc
   - feh
-  - xclip
   - bloodhound
   - bloodhound-python
   - seclists

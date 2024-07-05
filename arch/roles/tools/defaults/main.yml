@@ -1,5 +1,6 @@
 ---
 packages_to_install:
+  - firefox
   - openvpn
   - wireguard-tools
   - python-pipx

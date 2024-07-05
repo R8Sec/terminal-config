@@ -39,6 +39,11 @@
     dest: "{{ ansible_user_dir }}/.tmux.conf"
     force: yes
 
+- name: create kitty dir
+  file:
+    path: "{{ ansible_user_dir }}/.config/kitty"
+    state: directory
+
 - name: Copy kitty.conf
   copy:
     src: "kitty.conf"

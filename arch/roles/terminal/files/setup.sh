@@ -7,9 +7,3 @@ fnm use --install-if-missing 20
 
 # Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# fzf
-/home/linuxbrew/.linuxbrew/bin/brew install fzf
-
-# zoxide
-/home/linuxbrew/.linuxbrew/bin/brew install zoxide

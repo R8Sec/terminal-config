@@ -3,6 +3,6 @@
   hosts: localhost
   connection: local
   roles:
-    - roles/terminal
     - roles/package-management
+    - roles/terminal
     - roles/tools

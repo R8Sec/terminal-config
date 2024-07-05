@@ -11,6 +11,9 @@
       - zsh
       - tmux
       - kitty
+      - neovim
+      - fzf
+      - zoxide
       - xclip
       - otf-comicshanns-nerd
     state: present

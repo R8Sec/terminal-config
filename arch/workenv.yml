@@ -5,5 +5,5 @@
   roles:
     - roles/package-management
     - roles/vbox-config
-    - roles/terminal
     - roles/tools
+    - roles/terminal

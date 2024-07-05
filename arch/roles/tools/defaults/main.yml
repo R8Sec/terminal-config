@@ -1,32 +1,34 @@
 ---
 packages_to_install:
-  - firefox
-  - openvpn
-  - wireguard-tools
-  - python-pipx
-  - jq
-  - flameshot
-  - pandoc
-  - feh
   - bloodhound
   - bloodhound-python
-  - seclists
-  - eyewitness
-  - cupp
-  - smtp-user-enum
-  - xxd
-  - openldap
-  - ghidra
-  - nmap
-  - wireshark-qt
-  - wireshark-cli
-  - tcpdump
   - burpsuite
-  - metasploit
-  - sqlmap
-  - john
-  - impacket
   - crackmapexec
+  - cupp
+  - eyewitness
+  - feh
+  - firefox
+  - flameshot
+  - ghidra
+  - hashcat
+  - hashcat-utils
+  - impacket
+  - john
+  - jq
+  - metasploit
+  - nmap
+  - openldap
+  - openvpn
+  - pandoc
+  - wireguard-tools
+  - python-pipx
+  - seclists
+  - sqlmap
+  - smtp-user-enum
+  - tcpdump
+  - wireshark-cli
+  - wireshark-qt
+  - xxd
 
 python_packages:
   - pwntools

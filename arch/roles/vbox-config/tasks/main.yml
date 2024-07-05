@@ -27,7 +27,7 @@
     
 - name: create i3 config directory
   file:
-    path: "{{ ansible_user_dir }}/.conifg/i3"
+    path: "{{ ansible_user_dir }}/.config/i3"
     state: directory
 
 - name: copy i3 config

@@ -30,6 +30,9 @@
   command: git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   when: tpm_installed.stat.exists == False
 
+- name: Install custom NvChad
+  command: rm -r ~/.config/nvim && git clone https://github.com/R8Sec/custom-nvchad.git ~/.config/nvim
+
 - name: Copy .zshrc
   copy:
     src: ".zshrc"

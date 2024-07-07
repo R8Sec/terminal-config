@@ -21,11 +21,13 @@ packages_to_install:
   - openvpn
   - pandoc
   - wireguard-tools
+  - proxychains-ng
   - python-pipx
   - seclists
   - sqlmap
   - smtp-user-enum
   - tcpdump
+  - tor-browser
   - wireshark-cli
   - wireshark-qt
   - xxd

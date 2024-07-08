@@ -15,6 +15,12 @@
     /tmp/getburpcert.sh
   when: burp_cert.stat.exists == False
 
+- name: "Check/create /usr/local/share/ca-certificates"
+  become: true
+  file:
+    path: "/usr/local/share/ca-certificates"
+    state: directory
+
 - name: "Copying CA Certificate to /usr/local/share/ca-certificates"
   copy:
     src: /tmp/cacert.der
@@ -49,3 +55,6 @@
     src: "templates/UserConfigCommunity.json.j2"
     dest: "{{ ansible_user_dir }}/.BurpSuite/UserConfigCommunity.json"
 
+- name: Set java version
+  become: yes
+  command: archlinux-java set java-22-openjdk

@@ -13,6 +13,7 @@ set $mod Mod4
 
 # Autostart
 exec --no-startup-id picom
+exec feh --bg-scale ~/.config/wallpaper.jpeg
 exec --no-startup-id VBoxClient-all
 
 # Font for window titles. Will also be used by the bar unless a different font

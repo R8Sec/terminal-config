@@ -54,3 +54,9 @@
     src: "theme.rasi"
     dest: "{{ ansible_user_dir }}/.config/rofi/theme.rasi"
     force: yes
+
+- name: Copy wallpaper image
+  copy:
+    src: "wallpaper.jpeg"
+    dest: "{{ ansible_user_dir }}/.config/wallpaper.jpeg"
+    force: yes

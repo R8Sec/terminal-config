@@ -7,3 +7,4 @@
     - roles/vbox-config
     - roles/tools
     - roles/terminal
+    - roles/customize-browser

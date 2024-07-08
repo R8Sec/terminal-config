@@ -5,6 +5,8 @@
     name: 
       - linux-headers
       - virtualbox-guest-utils
+      - rofi
+      - picom
     state: present
 
 - name: Enable Guest additions
@@ -34,4 +36,21 @@
   copy:
     src: "i3-config"
     dest: "{{ ansible_user_dir }}/.config/i3/config"
+    force: yes
+
+- name: create rofi config directory
+  file:
+    path: "{{ ansible_user_dir }}/.config/rofi"
+    state: directory
+
+- name: copy rofi config
+  copy:
+    src: "config.rasi"
+    dest: "{{ ansible_user_dir }}/.config/rofi/config.rasi"
+    force: yes
+
+- name: copy rofi theme
+  copy:
+    src: "theme.rasi"
+    dest: "{{ ansible_user_dir }}/.config/rofi/theme.rasi"
     force: yes

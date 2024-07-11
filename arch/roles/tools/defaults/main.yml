@@ -5,29 +5,41 @@ packages_to_install:
   - burpsuite
   - crackmapexec
   - cupp
+  - dirb
+  - dirbuster
   - eyewitness
   - feh
+  - ffuf
   - firefox
   - flameshot
   - ghidra
+  - gnu-netcat
   - hashcat
   - hashcat-utils
   - impacket
   - john
   - jq
   - metasploit
+  - man-db
+  - man-pages
   - nmap
   - openldap
+  - openresolv
   - openvpn
   - pandoc
-  - wireguard-tools
   - proxychains-ng
   - python-pipx
+  - python-pypykatz
+  - responder
   - seclists
-  - sqlmap
+  - smbclient
   - smtp-user-enum
+  - sqlmap
   - tcpdump
+  - thunar
   - tor-browser
+  - wfuzz
+  - wireguard-tools
   - wireshark-cli
   - wireshark-qt
   - xxd

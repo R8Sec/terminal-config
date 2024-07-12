@@ -1,5 +1,7 @@
 ---
 packages_to_install:
+  - amass
+  - bind
   - bloodhound
   - bloodhound-python
   - burpsuite
@@ -7,13 +9,17 @@ packages_to_install:
   - cupp
   - dirb
   - dirbuster
+  - dnsenum
+  - dnsrecon
   - eyewitness
   - feh
   - ffuf
+  - fierce
   - firefox
   - flameshot
   - ghidra
   - gnu-netcat
+  - gobuster
   - hashcat
   - hashcat-utils
   - impacket
@@ -22,12 +28,14 @@ packages_to_install:
   - metasploit
   - man-db
   - man-pages
+  - nikto
   - nmap
   - openldap
   - openresolv
   - openvpn
   - pandoc
   - proxychains-ng
+  - puredns
   - python-pipx
   - python-pypykatz
   - responder
@@ -39,6 +47,7 @@ packages_to_install:
   - thunar
   - tor-browser
   - wfuzz
+  - whois
   - wireguard-tools
   - wireshark-cli
   - wireshark-qt

@@ -1,0 +1,62 @@
+---
+- name: Install VirtualBox guest additions + dependencies
+  community.general.pacman:
+    name: 
+      - linux-headers
+      - picom
+      - rofi
+      - virtualbox-guest-utils
+    state: present
+  become: true
+
+- name: Enable Guest additions
+  systemd_service:
+    name: vboxservice.service
+    enabled: true
+  become: true
+
+- name: Copy .Xresources
+  copy:
+    src: ".Xresources"
+    dest: "{{ ansible_user_dir }}/.Xresources"
+    force: yes
+    
+- name: Copy .xinitrc
+  copy:
+    src: ".xinitrc"
+    dest: "{{ ansible_user_dir }}/.xinitrc"
+    force: yes
+    
+- name: Create i3 config directory
+  file:
+    path: "{{ ansible_user_dir }}/.config/i3"
+    state: directory
+
+- name: Create i3 config
+  copy:
+    src: "i3-config"
+    dest: "{{ ansible_user_dir }}/.config/i3/config"
+    force: yes
+
+- name: Create rofi config directory
+  file:
+    path: "{{ ansible_user_dir }}/.config/rofi"
+    state: directory
+
+- name: Create rofi config
+  copy:
+    src: "config.rasi"
+    dest: "{{ ansible_user_dir }}/.config/rofi/config.rasi"
+    force: yes
+
+- name: Create rofi theme
+  copy:
+    src: "theme.rasi"
+    dest: "{{ ansible_user_dir }}/.config/rofi/theme.rasi"
+    force: yes
+
+- name: Set wallpaper image
+  copy:
+    src: "wallpaper.jpeg"
+    dest: "{{ ansible_user_dir }}/.config/wallpaper.jpeg"
+    force: yes

@@ -1,0 +1,66 @@
+---
+- name: Install required packages
+  community.general.pacman:
+    update_cache: yes
+    name:
+      - zsh
+      - tmux
+      - terminator
+      - neovim
+      - fzf
+      - zoxide
+      - xclip
+      - otf-comicshanns-nerd
+    state: present
+  become: true
+
+- name: Setup
+  script: setup.sh 
+
+- name: Check if Tmux Plugin Manager repo exists
+  stat:
+    path: "{{ ansible_user_dir }}/.tmux/plugins/tpm"
+  register: tpm_installed
+
+- name: Clone Tmux Plugin Manager repo
+  command: git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  when: tpm_installed.stat.exists == false
+
+- name: Check if nvim configuration directory exists
+  stat:
+    path: "{{ ansible_user_dir }}/.config/nvim"
+  register: nvim_configured
+
+- name: Install custom NvChad
+  command: git clone https://github.com/R8Sec/custom-nvchad.git ~/.config/nvim
+  when: nvim_configured == false
+
+- name: Copy .zshrc
+  copy:
+    src: ".zshrc"
+    dest: "{{ ansible_user_dir }}/.zshrc"
+    force: yes
+
+- name: Copy .tmux.conf
+  copy:
+    src: ".tmux.conf"
+    dest: "{{ ansible_user_dir }}/.tmux.conf"
+    force: yes
+
+- name: Create terminator dir
+  file:
+    path: "{{ ansible_user_dir }}/.config/terminator"
+    state: directory
+
+- name: Copy terminator configuration
+  copy:
+    src: "terminator.conf"
+    dest: "{{ ansible_user_dir }}/.config/terminator/config"
+    force: yes
+
+- name: Set default shell to zsh
+  user:
+    name: "{{ ansible_user }}"
+    shell: /bin/zsh
+  when: ansible_user != 'root'
+  become: true

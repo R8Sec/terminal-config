@@ -1,0 +1,6 @@
+- name: "Updating Firefox Policies"
+  become: true
+  template: 
+    src: "templates/policies.json.j2"
+    dest: "/usr/lib/firefox/distribution/policies.json"
+

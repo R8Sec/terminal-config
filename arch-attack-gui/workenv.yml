@@ -1,0 +1,10 @@
+---
+- name: "Work Environment"
+  hosts: localhost
+  connection: local
+  roles:
+    - roles/package-management
+    - roles/vbox-config
+    - roles/tools
+    - roles/terminal
+    - roles/customize-browser

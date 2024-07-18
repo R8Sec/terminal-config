@@ -1,0 +1,12 @@
+---
+- name: Install tools using pacman
+  community.general.pacman:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ packages_to_install }}"
+  become: true
+
+- name: Install Python applications using pipx
+  community.general.pipx:
+    name: "{{ item }}"
+  with_items: "{{ python_packages }}"

@@ -1,0 +1,11 @@
+---
+- name: Dependencies
+  community.general.pacman:
+    update_cache: yes
+    name:
+      - git
+      - base-devel
+  become: true
+
+- name: Setting up package management
+  script: pkg-mng.sh

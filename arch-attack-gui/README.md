@@ -13,3 +13,10 @@ sudo whoami
 
 ansible-playbook workenv.yml
 ```
+
+## Setting up hashcat
+
+Hashcat needs the OpenCL, CUDA or HIP runtime to work
+```bash
+paru intel-opencl-runtime
+```
